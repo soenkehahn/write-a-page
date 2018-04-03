@@ -10,7 +10,10 @@ describe("App", () => {
     expect(wrapper.find("textarea")).toExist();
   });
 
-  it("focuses on the text area");
+  it("focuses on the text area", () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.find("textarea").props().autoFocus).toBe(true);
+  });
 
   describe("when over 300 words are written", () => {
     it("removes the text area tag");
