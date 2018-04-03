@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from "react";
+import styled from "styled-components";
 
 export class App extends Component<{}, { value: string }> {
   constructor(props: {}) {
@@ -14,7 +15,7 @@ export class App extends Component<{}, { value: string }> {
 
   render() {
     return (
-      <textarea
+      <Textarea
         autoFocus={true}
         value={this.state.value}
         onChange={event => this.handleChange(event)}
@@ -22,3 +23,12 @@ export class App extends Component<{}, { value: string }> {
     );
   }
 }
+
+const Textarea = styled.textarea`
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+`;
