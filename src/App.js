@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+const wordLimit = 300;
+
 export const _tested = { wordCount };
 
 function wordCount(text: string) {
@@ -20,8 +22,8 @@ export class App extends Component<{}, { value: string }> {
   }
 
   render() {
-    if (wordCount(this.state.value) >= 300) {
-      return <div />;
+    if (wordCount(this.state.value) >= wordLimit) {
+      return <Div>Done!</Div>;
     } else {
       return (
         <Textarea
@@ -38,6 +40,14 @@ const Textarea = styled.textarea`
   width: 600px;
   height: 400px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+`;
+
+const Div = styled.div`
+  display: block;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
