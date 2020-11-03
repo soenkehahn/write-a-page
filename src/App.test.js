@@ -30,6 +30,10 @@ describe("App", () => {
     expect(textarea()).toExist();
   });
 
+  it("disables spellcheck", () => {
+    expect(textarea().props().spellCheck).toEqual(false);
+  });
+
   it("treats newlines as word separators", () => {
     expect(_tested.wordCount("foo\nbar")).toEqual(2);
   });

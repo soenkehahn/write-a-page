@@ -29,7 +29,8 @@ export class App extends Component<{}, { value: string }> {
         <Textarea
           autoFocus={true}
           value={this.state.value}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
+          spellCheck={false}
         />
       );
     }
