@@ -1,8 +1,12 @@
 dev:
-  webpack-dev-server --content-base dist --mode development
+  parcel src/index.html
 
 bundle:
-  webpack --content-base dist --mode production
+  parcel build src/index.html
+
+deploy:
+  rm -rf docs
+  parcel build src/index.html --no-source-maps --out-dir docs
 
 setup:
   yarn install

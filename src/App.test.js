@@ -40,9 +40,7 @@ describe("App", () => {
 
   describe("when 300 words are written", () => {
     beforeEach(() => {
-      const words = Array(300)
-        .fill("foo")
-        .join(" ");
+      const words = Array(300).fill("foo").join(" ");
       textarea().simulate("change", { target: { value: words } });
     });
 
@@ -57,9 +55,7 @@ describe("App", () => {
 
   describe("when slightly under 300 words are written", () => {
     beforeEach(() => {
-      const words = Array(299)
-        .fill("foo")
-        .join(" ");
+      const words = Array(299).fill("foo").join(" ");
       textarea().simulate("change", { target: { value: words } });
     });
 

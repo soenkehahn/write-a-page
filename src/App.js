@@ -1,13 +1,13 @@
 // @flow
 
-import React, { Component } from "react";
+import React, { Component, type Node } from "react";
 import styled from "styled-components";
 
 const wordLimit = 300;
 
 export const _tested = { wordCount };
 
-function wordCount(text: string) {
+function wordCount(text: string): number {
   return text.split(/\s+/).length;
 }
 
@@ -21,7 +21,7 @@ export class App extends Component<{}, { value: string }> {
     this.setState({ value: event.target.value });
   }
 
-  render() {
+  render(): Node {
     if (wordCount(this.state.value) >= wordLimit) {
       return <Div>Done!</Div>;
     } else {
