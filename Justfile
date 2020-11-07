@@ -4,9 +4,13 @@ dev:
 bundle:
   parcel build src/index.html
 
-deploy:
+deploy: ci
   rm -rf docs
-  parcel build src/index.html --no-source-maps --out-dir docs
+  parcel build \
+    --public-url https://soenkehahn.github.io/write-a-page/ \
+    --no-source-maps \
+    --out-dir docs \
+    src/index.html
 
 setup:
   yarn install
