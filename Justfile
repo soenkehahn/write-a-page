@@ -11,10 +11,14 @@ deploy:
 setup:
   yarn install
 
-check:
+type-check:
   flow
 
 test:
   jest
 
-ci: setup check test bundle
+format-check:
+  prettier --check src/*
+  prettier --check src/**/*
+
+ci: setup type-check test format-check bundle
