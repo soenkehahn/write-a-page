@@ -1,3 +1,5 @@
+export PATH := `echo "./node_modules/.bin/flow:$PATH"`
+
 dev:
   parcel src/index.html
 
