@@ -1,4 +1,4 @@
-export PATH := `echo "./node_modules/.bin/flow:$PATH"`
+export PATH := `echo "./node_modules/.bin:$PATH"`
 
 dev:
   parcel src/index.html
